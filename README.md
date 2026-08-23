@@ -184,11 +184,11 @@ cd ~\.octopusdev
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/tuusuario/octopusdev.git
+git remote add origin https://github.com/gabrielbaute/octopusdev.git
 git push -u origin main
 
 # En la máquina destino
-git clone https://github.com/tuusuario/octopusdev.git ~\.octopusdev
+git clone https://github.com/gabrielbaute/octopusdev.git ~\.octopusdev
 ```
 
 ### Opción 3: Script de instalación automática
@@ -197,7 +197,7 @@ git clone https://github.com/tuusuario/octopusdev.git ~\.octopusdev
 # install.ps1
 Write-Host "Instalando OctopusDev..." -ForegroundColor Cyan
 
-$source = "https://github.com/tuusuario/octopusdev/archive/main.zip"
+$source = "https://github.com/gabrielbaute/octopusdev/archive/main.zip"
 $destination = "$env:TEMP\octopusdev.zip"
 
 Invoke-WebRequest -Uri $source -OutFile $destination
