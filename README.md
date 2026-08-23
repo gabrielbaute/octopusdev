@@ -179,15 +179,6 @@ Copy-Item -Path "C:\backup\octopusdev" -Destination ~\.octopusdev -Recurse
 ### Opción 2: Usar un repositorio Git
 
 ```bash
-# En la máquina origen
-cd ~\.octopusdev
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/gabrielbaute/octopusdev.git
-git push -u origin main
-
-# En la máquina destino
 git clone https://github.com/gabrielbaute/octopusdev.git ~\.octopusdev
 ```
 
@@ -211,6 +202,8 @@ Remove-Item -Path "$env:TEMP\octopusdev" -Recurse -Force
 Write-Host "OctopusDev instalado en ~\.octopusdev" -ForegroundColor Green
 Write-Host "Agrega el alias a tu perfil para usar 'oi'" -ForegroundColor Yellow
 ```
+
+También puedes usar el script de instalación disponible en el repositorio (una vez clonado)
 
 ---
 
