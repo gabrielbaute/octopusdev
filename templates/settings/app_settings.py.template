@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     API_LOG_LEVEL: str = "info"
 
     # ----------- DATABASE ------------
-    DATABASE_URL: str = str(f"sqlite+aiosqlite:///{INSTANCE_DIR / f'appname_database.db'}")  
+    DATABASE_URL: str = str(f"sqlite+aiosqlite:///{INSTANCE_DIR / f'{APP_NAME}_database.db'}")  
     DATABASE_ECHO: bool = False  
     DATABASE_POOL_SIZE: int = 5  
     DATABASE_POOL_RECYCLE: int = 3600  
@@ -73,7 +73,7 @@ class Settings(BaseSettings):
         self.ensure_dirs()
         
         if not self.DATABASE_URL:
-            self.DATABASE_URL = f"sqlite+aiosqlite:///{self.INSTANCE_DIR / 'gabsbooks.db'}"
+            self.DATABASE_URL = f"sqlite+aiosqlite:///{self.INSTANCE_DIR / f'{self.APP_NAME}_database.db'}"
 
     def ensure_dirs(self) -> None:
         try:
