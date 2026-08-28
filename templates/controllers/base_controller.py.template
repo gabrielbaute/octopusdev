@@ -43,6 +43,21 @@ class AsyncBaseController(Generic[ModelType, CreateSchemaType, UpdateSchemaType,
         self.model = model
         self.session = session
 
+    def _validate_uuid(self, uuid_str: Union[str, UUID]) -> UUID:
+        """
+        Helper para validar que una ID sea en efecto de tipo UUID.
+
+        Args:
+            uuid_str (Union[str, UUID]): ID en string o UUID.
+
+        Returns:
+            UUID: ID en formato UUID.
+        """
+        if isinstance(uuid_str, str):
+            return UUID(uuid_str)
+        else:
+            return uuid_str
+
     async def _commit_or_rollback(self) -> None:
         """
         Intenta realizar un commit de la sesión actual. Si ocurre un error, realiza un rollback para revertir los cambios.
