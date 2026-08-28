@@ -57,7 +57,7 @@ Write-Host "Proyecto creado en: $actualPath" -ForegroundColor Green
 Push-Location $actualPath
 Write-Host "Instalando dependencias..." -ForegroundColor Cyan
 
-$deps = @("fastapi", "pydantic", "pydantic-settings", "sqlmodel", "uvicorn", "aiosqlite")
+$deps = @("fastapi", "pydantic", "pydantic-settings", "sqlmodel", "uvicorn", "aiosqlite", "requests", "jinja2", "passlib", "python-jose")
 foreach ($dep in $deps) {
     Write-Host "  - $dep" -ForegroundColor Gray
     uv add $dep
